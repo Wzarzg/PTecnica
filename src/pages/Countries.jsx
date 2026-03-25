@@ -1,18 +1,10 @@
 import '../App.css'
 import Skeleton from '../components/Skeleton'
 import Card from '../components/Card'
-import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 
 
-const carga = async () => {
-  await new Promise(resolve => setTimeout(resolve,3000))
-  const res = await axios.get(
-    "https://restcountries.com/v3.1/all?fields=name,capital,flags,continents,population,languages"
-  )
-  return res.data
-}
 
 function App() {
   const { data, isLoading, error } = useQuery({
