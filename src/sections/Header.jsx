@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import { SlHome } from "react-icons/sl";
 
 const Header = () => (
   <header className="fixed top-0 left-0 w-full bg-blue-900 shadow-md ">
@@ -17,7 +18,7 @@ const Header = () => (
 
       <nav>
         <ul className="flex gap-6 text-lg font-semibold">
-            <li><NavLink to="/" className={({isActive})=> isActive?"text-emerald-200":"text-white"}>Inicio</NavLink></li>
+            <li><NavLink to="/" className={({isActive})=> isActive?"text-emerald-200 flex items-center gap-2":"text-white"}><SlHome />Inicio</NavLink></li>
             {/*<li><NavLink to="/extra" className={({isActive})=> isActive?"text-green-500":"text-white hover:text-green-200"}>Extra</NavLink></li>*/}
         </ul>
       </nav>
