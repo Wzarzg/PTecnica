@@ -1,4 +1,3 @@
-import '../App.css'
 import Skeleton from '../components/Skeleton'
 import Card from '../components/Card'
 import { useState } from 'react'
