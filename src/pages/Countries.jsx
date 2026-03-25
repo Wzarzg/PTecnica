@@ -1,17 +1,12 @@
 import '../App.css'
 import Skeleton from '../components/Skeleton'
 import Card from '../components/Card'
-import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
-
-
+import { usePaises } from '../hooks/usePaises'
 
 function App() {
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["countries"],
-    queryFn: carga,
-  })
-
+  //pedida
+  const { data, isLoading, error } = usePaises()
   //hook filtrado
   const [filtrado, setFiltrado] = useState("")
   //hook pagi
@@ -26,7 +21,6 @@ function App() {
       </div>
     )
   }
-
   if (error) return <p>Error en la cargaaa</p>
 
   //filtrado
