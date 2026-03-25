@@ -17,7 +17,7 @@ const Header = () => (
 
       <nav>
         <ul className="flex gap-6 text-lg font-semibold">
-            <li><NavLink to="/" className={({isActive})=> isActive?"text-green-500":"text-white hover:text-green-200"}>Inicio</NavLink></li>
+            <li><NavLink to="/" className={({isActive})=> isActive?"text-emerald-200":"text-white"}>Inicio</NavLink></li>
             {/*<li><NavLink to="/extra" className={({isActive})=> isActive?"text-green-500":"text-white hover:text-green-200"}>Extra</NavLink></li>*/}
         </ul>
       </nav>
