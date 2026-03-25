@@ -1,7 +1,7 @@
 import Skeleton from '../components/Skeleton'
 import Card from '../components/Card'
 import { useState } from 'react'
-import { usePaises } from '../hooks/usePaises'
+import { usePaises } from '../hooks/reactQueary'
 
 function App() {
   //pedida

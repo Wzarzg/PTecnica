@@ -1,5 +1,3 @@
-import React from "react"
-
 const Skeleton =()=>{
     return(
         <div className="border p-4 rounded-2xl border-gray-200 shadow-lg bg-gray-50 ">

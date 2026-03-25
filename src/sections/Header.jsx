@@ -12,13 +12,13 @@ const Header = () => (
           src="https://diana1874.wordpress.com/wp-content/uploads/2014/06/mundito.png"
           alt="logo mundito"/>
       </Link>
-      <span className="text-white font-bold text-xl">Paises prueba</span>
+      <Link to="/"><span className="text-white font-bold text-xl">Paises prueba</span></Link>
       </div>
 
 
       <nav>
         <ul className="flex gap-6 text-lg font-semibold">
-            <li><NavLink to="/" className={({isActive})=> isActive?"text-emerald-200 flex items-center gap-2":"text-white"}><SlHome />Inicio</NavLink></li>
+            <li><NavLink to="/" className={({isActive})=> isActive?"text-emerald-200 flex items-center gap-1":"text-white flex items-center gap-1"}><SlHome />Inicio</NavLink></li>
             {/*<li><NavLink to="/extra" className={({isActive})=> isActive?"text-green-500":"text-white hover:text-green-200"}>Extra</NavLink></li>*/}
         </ul>
       </nav>
