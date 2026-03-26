@@ -1,7 +1,7 @@
 import Skeleton from '../components/Skeleton'
 import Card from '../components/Card'
 import { useState } from 'react'
-import { usePaises } from '../hooks/reactQueary'
+import { usePaises } from '../hooks/usePaises'
 
 function App() {
   //pedida
@@ -63,7 +63,7 @@ function App() {
             capital={country.capital?.[0]}
             flags={country.flags.png}
             continents={country.continents}
-            population={country.population}
+            population={country.population.toLocaleString()}
             language={Object.values(country.languages).slice(0, 3).join(", ")}
           />
         ))}
