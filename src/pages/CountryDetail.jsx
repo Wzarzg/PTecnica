@@ -8,8 +8,8 @@ const CountryDetail = () => {
   const { data, isLoading, error } = usePaisesDetalle(name)
   const navigate = useNavigate()
 
-  if (isLoading) return <p>Cargando...</p>
-  if (error) return <p>Error al cargar</p>
+  if (isLoading) return <p>Cargandooo</p>
+  if (error) return <p>Error al cargar la data</p>
 
   return (
     <div className="min-h-screen flex justify-start items-center bg-emerald-50  flex-col">
@@ -24,7 +24,7 @@ const CountryDetail = () => {
       </button>
       </div>
         <div className="flex justify-center w-6/12">
-          <h1 className="mx-auto text-4xl font-semibold flex flex-row items-center font-serif text-emerald-700 gap-1"><TfiLineDotted /> <TfiLineDotted />Descripcion de pais <TfiLineDotted /><TfiLineDotted /></h1>
+          <h1 className="mx-auto text-4xl font-semibold flex flex-row items-center font-serif text-emerald-700 gap-1"><TfiLineDotted /> <TfiLineDotted />Descripción de país <TfiLineDotted /><TfiLineDotted /></h1>
         </div>
         <div className="w-3/12"></div>
       </div>

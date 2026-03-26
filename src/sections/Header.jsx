@@ -12,7 +12,7 @@ const Header = () => (
           src="https://diana1874.wordpress.com/wp-content/uploads/2014/06/mundito.png"
           alt="logo mundito"/>
       </Link>
-      <Link to="/"><span className="text-white font-bold text-xl">Paises prueba</span></Link>
+      <Link to="/"><span className="text-white font-bold text-xl">Países mundi</span></Link>
       </div>
 
 

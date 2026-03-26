@@ -31,7 +31,7 @@ function App() {
     <div className='flex flex-col items-center'>
       {/*barra de busqueda/filtrado*/}
       <div className="w-full max-w-120 mb-7">
-        <input type="text" placeholder="Buscar Pais" value={filtrado} onChange={(e) => setFiltrado(e.target.value)}
+        <input type="text" placeholder="Buscar País" value={filtrado} onChange={(e) => setFiltrado(e.target.value)}
         className="w-full bg-gray-100 px-3.5 py-2 border border-gray-300 rounded-full"
         />
       </div>
