@@ -4,7 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import axios from "axios"
 import { SlPencil } from "react-icons/sl";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-
+import { toast, ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 const schema = z.object({
   title: z.string().min(1, "El título no puede estar vacío"),
@@ -29,6 +30,7 @@ const CPosts = () => {
     },
     onSuccess:(npost)=>{
       queryClient.setQueryData(["posts"], (dtactual = []) => [npost, ...dtactual])
+      toast.success("Post realizado exitosamente")
     }
   })
 
@@ -48,7 +50,7 @@ const CPosts = () => {
         
         <input type="text" placeholder="Título" {...register("title")} className="border p-2 rounded border-gray-300 shadow-md"/>
         { errors.title && <p className="text-red-500">{errors.title.message}</p>}
-        <textarea placeholder="Contenido" {...register("body")} className="border p-2 rounded" />
+        <textarea placeholder="Contenido" {...register("body")} className="border p-2 rounded border-gray-300 shadow-md" />
         {errors.body && <p className="text-red-500">{errors.body.message}</p>}
         
         <button type="submit" className="bg-gray-200 font-semibold p-2 rounded hover:bg-green-200">Crear</button>
@@ -63,8 +65,11 @@ const CPosts = () => {
           </div>
         ))}
       </div>
+
+        <ToastContainer position="top-right" autoClose={2000} />
     </div>
   )
+
 }
 
 export default CPosts
