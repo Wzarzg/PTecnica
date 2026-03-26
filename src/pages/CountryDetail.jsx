@@ -19,7 +19,7 @@ const CountryDetail = () => {
       <div className="flex justify-start w-1/12">
         <button 
         onClick={() => navigate(-1)} 
-        className=" bg-gray-100 p-2 rounded-3xl w-28 h-20 shadow-md hover:bg-blue-100 flex justify-center items-center ml-9">
+        className=" bg-gray-100 p-2 rounded-3xl w-28 h-20 shadow-md hover:bg-green-100 flex justify-center items-center ml-9">
         <TfiBackLeft className="text-4xl text-emerald-700" />
       </button>
       </div>
