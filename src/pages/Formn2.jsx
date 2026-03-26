@@ -1,11 +1,9 @@
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import axios from "axios"
 import { SlPencil } from "react-icons/sl";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import { toast, ToastContainer } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+import { ToastContainer } from "react-toastify"
+import { usePosts } from "../hooks/usePosts";
 
 const schema = z.object({
   title: z.string().min(1, "El título no puede estar vacío"),
@@ -13,33 +11,14 @@ const schema = z.object({
 })
 
 const CPosts = () => {
-  const queryClient = useQueryClient()
-
-  const {data:posts=[]}= useQuery({
-    queryKey:["posts"],
-    queryFn: async ()=>{
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts")
-      return res.data
-    }
-  })
-
-  const mutation= useMutation({
-    mutationFn: async (nuevoP)=>{
-      const res = await axios.post("https://jsonplaceholder.typicode.com/posts",nuevoP)
-      return res.data
-    },
-    onSuccess:(npost)=>{
-      queryClient.setQueryData(["posts"], (dtactual = []) => [npost, ...dtactual])
-      toast.success("Post realizado exitosamente")
-    }
-  })
+  const { postsQuery, crearPosts } = usePosts()
 
   const { register, handleSubmit, formState: {errors} } = useForm({
     resolver: zodResolver(schema)
   })
 
   const onSubmit = (post) => {
-    mutation.mutate(post)
+    crearPosts.mutate(post)
   }
 
   return (
@@ -58,7 +37,7 @@ const CPosts = () => {
 
       {/*posts*/}
       <div className="grid gap-4 ">
-        {posts.slice(0, 7).map(post => (
+        {postsQuery.data?.slice(0, 7).map(post => (
           <div key={post.id} className="bg-white shadow-md rounded-md p-3 h-19 ">
             <h3 className="text-xl font-semibold">{post.title}</h3>
             <p className=" font-light pl-4">{post.body}</p>
