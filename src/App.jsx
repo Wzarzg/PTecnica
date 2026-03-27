@@ -2,9 +2,11 @@ import Header from "./sections/Header"
 import Countries from "./pages/Countries"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import CountryDetail from "./pages/CountryDetail";
+import Formn2 from "./pages/Formn2"; 
 
 
-//<Route path="/:name"element={<CountryDetail/>} />
+
+
 const App =()=>(
   <div className="min-h-screen bg-emerald-50">
   <Router>
@@ -13,6 +15,7 @@ const App =()=>(
         <Routes>
           <Route path="/"element={<Countries/>}></Route>
           <Route path="/:name"element={<CountryDetail></CountryDetail>}></Route>
+          <Route path="/formn2"element={<Formn2/>}></Route>
         </Routes>
   </Router>
   </div>

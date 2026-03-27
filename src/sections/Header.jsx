@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { SlHome } from "react-icons/sl";
+import { SlHome, SlBookOpen  } from "react-icons/sl";
 
 const Header = () => (
   <header className="fixed top-0 left-0 w-full bg-blue-900 shadow-md ">
@@ -12,14 +12,15 @@ const Header = () => (
           src="https://diana1874.wordpress.com/wp-content/uploads/2014/06/mundito.png"
           alt="logo mundito"/>
       </Link>
-      <Link to="/"><span className="text-white font-bold text-xl">Paises prueba</span></Link>
+      <Link to="/"><span className="text-white font-bold text-xl">Países mundi</span></Link>
       </div>
 
 
       <nav>
         <ul className="flex gap-6 text-lg font-semibold">
             <li><NavLink to="/" className={({isActive})=> isActive?"text-emerald-200 flex items-center gap-1":"text-white flex items-center gap-1"}><SlHome />Inicio</NavLink></li>
-            {/*<li><NavLink to="/extra" className={({isActive})=> isActive?"text-green-500":"text-white hover:text-green-200"}>Extra</NavLink></li>*/}
+            <li><NavLink to="/formn2" className={({isActive})=> isActive?"text-emerald-200 flex items-center gap-1":"text-white flex items-center gap-1"}><SlBookOpen />Form-n2</NavLink></li>
+            
         </ul>
       </nav>
     </div>
