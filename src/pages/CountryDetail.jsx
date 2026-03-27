@@ -17,7 +17,7 @@ const CountryDetail = () => {
 
   return (
     <div className="min-h-screen flex justify-start items-center bg-emerald-50  flex-col">
-
+      {/*titulo y boton*/ }
       <div className="flex items-center w-full px-8 pb-8">
       <div className="w-2/12"></div>
       <div className="flex justify-start w-1/12">
@@ -34,6 +34,9 @@ const CountryDetail = () => {
       </div>
 
       <div className=" bg-white shadow-lg rounded-4xl flex flex-row justify-start items-center gap-8 w-6xl h-170 p-20">
+      
+      {/*Imagen pais y de pokemones*/ }
+      
       <div className="flex flex-col items-center ">
       <h1 className="font-serif text-4xl font-bold mb-4 ">{data.name.common}</h1>
         <img 
@@ -41,7 +44,16 @@ const CountryDetail = () => {
         alt={data.name.common} 
             className="w-xl rounded-lg shadow-xl "
         />
+
+      <p>asdasdas</p>
+      <p>asdasdas</p>
+      <p>asdasdas</p>
+      <p>asdasdas</p>
+      <p>asdasdas</p>
+      <p>asdasdas</p>
+      <p>asdasdas</p>
       </div>
+      
 
       <div className="pl-9 font-light text-2xl">
       <p><span className="font-semibold text-gray-700">Capital: </span>{data.capital?.[0]}</p>

@@ -28,6 +28,7 @@ function App() {
   )
 
   return (
+
     <div className='flex flex-col items-center'>
       {/*barra de busqueda/filtrado*/}
       <div className="w-full max-w-120 mb-7">
