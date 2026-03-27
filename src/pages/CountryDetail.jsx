@@ -2,13 +2,17 @@ import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { usePaisesDetalle } from "../hooks/usePaises"
 import { TfiLineDotted, TfiBackLeft } from "react-icons/tfi"
+import { useNoticias } from "../hooks/useNoticias"
+
 
 const CountryDetail = () => {
   const { name } = useParams()
   const { data, isLoading, error } = usePaisesDetalle(name)
   const navigate = useNavigate()
 
-  if (isLoading) return <p>Cargandooo</p>
+  const { data: noticias = [], isLoading: noticiasLoading } = useNoticias(data?.cca2)
+
+  if (isLoading) return <p>Cargandoooo</p>
   if (error) return <p>Error al cargar la data</p>
 
   return (
@@ -49,6 +53,24 @@ const CountryDetail = () => {
       <p><span className="font-semibold text-gray-700">Área: </span>{data.area.toLocaleString()} km²</p>
       <p><span className="font-semibold text-gray-700">Monedas: </span>{Object.values(data.currencies).map(c => `${c.name} (${c.symbol})`).join(", ")}</p>
       
+      <div className="mt-3 w-full bg-white shadow-lg rounded-xl p-2">
+        <h2 className="text-2xl font-bold text-emerald-700 ">Noticias de {data.name.common}</h2>
+        {noticiasLoading && <p>Cargando noticias...</p>}
+        {noticias.length === 0 && <p>No hay noticias disponibles.</p>}
+        <ul className="space-y-2">
+            {noticias.slice(0, 2).map((noti, i) => (
+              <li key={i} className="border-b border-green-600 pb-2">
+                <div className="flex">
+                  <p className="text-lg font-semibold text-gray-800">{noti.title}</p>
+                  <p className="text-lg font-semibold text-red-800 ml-8">{noti.source.name}</p>
+                </div>
+                <p className="text-gray-700 text-sm mt-1">{noti.description}</p>
+                <p className="text-green-800 text-sm mt-2">Publicado el: {noti.publishedAt}</p>
+              </li>
+            ))}
+          </ul>
+      </div>
+    
       </div>
     </div>
     </div>
