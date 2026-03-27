@@ -55,8 +55,8 @@ const CountryDetail = () => {
       
       <div className="mt-3 w-full bg-white shadow-lg rounded-xl p-2">
         <h2 className="text-2xl font-bold text-emerald-700 ">Noticias de {data.name.common}</h2>
-        {noticiasLoading && <p>Cargando noticias...</p>}
-        {noticias.length === 0 && <p>No hay noticias disponibles.</p>}
+        {noticiasLoading && <p className="text-sm mt-5">Cargando noticias...</p>}
+        {noticias.length === 0 && <p className="text-sm mt-5">No hay noticias disponibles.</p>}
         <ul className="space-y-2">
             {noticias.slice(0, 2).map((noti, i) => (
               <li key={i} className="border-b border-green-600 pb-2">
