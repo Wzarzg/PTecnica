@@ -24,10 +24,13 @@ function App() {
   }
   if (error) return <p>Error en la carga</p>
 
+
   //filtrado
   const filtradoP = data.filter((country) =>
     country.name.common.toLowerCase().includes(filtrado.toLowerCase())
   )
+
+
 
   //paises en indice actuales
   const start = pagi * pageSize
@@ -35,14 +38,15 @@ function App() {
   const currentPage = filtradoP.slice(start, end)
   //cant total de paginas a mostrar luego de filtrado
   const totalPages = Math.ceil(filtradoP.length / pageSize)
-
-  // Calcular rango de páginas visibles (máx 5 botones)
+  //calcular rango de páginas visibles -botones
   const startPage = Math.max(0, pagi - 2)
   const endPage = Math.min(totalPages - 1, pagi + 2)
   const visiblePages = []
   for (let i = startPage; i <= endPage; i++) {
     visiblePages.push(i)
   }
+
+
 
   return (
     <div className='flex flex-col items-center'>
